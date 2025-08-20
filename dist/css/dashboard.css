@@ -8,11 +8,13 @@ body {
     font-family: 'Open Sans', sans-serif;
     background-color: #F7F7F7;
     overflow: hidden;
+    display: flex;
+    align-items: center;
 }
 
 .main-container {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-evenly;
     width: 100%;
     min-height: 90vh;
     padding: 0.5rem;
@@ -35,6 +37,7 @@ body {
     gap: 1rem;
     z-index: 100;
     transition: left 0.3s;
+    min-height: 80vh;
 }
 
 .panel-right {
@@ -43,7 +46,7 @@ body {
     border: 1px solid #ccc;
     border-radius: 1rem;
     padding: 2rem;
-    margin-left: 1rem;
+    margin-left: 0.5rem;
     box-shadow: 0 2px 16px 0 rgba(0, 0, 0, 0.04);
     min-height: 80vh;
     overflow-x: auto;
@@ -71,6 +74,7 @@ body {
 .menu-container {
     margin-bottom: 2rem;
     max-height: 55vh;
+    min-height: 55vh;
     overflow-y: auto;
 }
 
