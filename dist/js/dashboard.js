@@ -8,13 +8,11 @@ document.addEventListener('DOMContentLoaded', async function() {
     const tokenSession = sessionStorage.getItem('token');
     const userInfo = await getUserInfo(tokenSession);
     const plantsInfo = await getPlants(tokenSession);
-    renderSpanTotalPlants(plantsInfo.count);
     renderMenuButtons(plantsInfo.data)
 
     console.log('Token de sesión:', tokenSession);
     console.log('Datos del usuario:', userInfo);
     console.log('Información de las plantas:', plantsInfo);
-
 });
 
 document.getElementById('search-input').addEventListener('input', function(event) {
@@ -112,13 +110,4 @@ function renderMenuButtons(plants) {
         };
         menuContainer.appendChild(button);
     });
-}
-//Función que muetra el conteo de plantas disponibles
-function renderSpanTotalPlants(totalPlants) {
-    const spanTotalPlants = document.getElementById('available-ecoplants');
-    if (spanTotalPlants) {
-        spanTotalPlants.textContent = totalPlants;
-    } else {
-        console.error('Elemento con id "total-plants" no encontrado.');
-    }
 }
