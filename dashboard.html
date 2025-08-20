@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio</title>
+    <link rel="stylesheet" href="/dist/css/dashboard.css">
+</head>
+
+<body>
+    <button class="hamburger" id="hamburger" aria-label="Abrir menú">
+        <span></span>
+    </button>
+    <div class="main-container" id="main-container">
+        <div class="panel-left" id="panel-left">
+            <div class="logo">
+                <img src="dist/img/logo.png" alt="Logo de Ecoplant" />
+            </div>
+            <div class="input-container">
+                <input type="search" id="search-input" placeholder="Buscar..." />
+            </div>
+            <div class="menu-container">
+                <span>Ecoplantas <span id="available-ecoplants"></span></span>
+                <div class="menu-items">
+                    <!-- Aquí van los items del menú -->
+                </div>
+            </div>
+            <div class="footer-container">
+                <button class="history-button" id="history-button">Historial de inicios de sesión</button>
+                <button class="logout-button" id="logout-button">Salir</button>
+            </div>
+        </div>
+        <div class="panel-right">
+            <h1>Contenido</h1>
+        </div>
+    </div>
+    <script>
+        // Responsive menu JS
+        const hamburger = document.getElementById('hamburger');
+        const panelLeft = document.getElementById('panel-left');
+        const mainContainer = document.getElementById('main-container');
+
+        hamburger.addEventListener('click', function() {
+            panelLeft.classList.toggle('open');
+            mainContainer.classList.toggle('menu-open');
+        });
+
+        // Cierra el menú al hacer click fuera en móviles
+        panelLeft.addEventListener('click', function(e) {
+            if (e.target === panelLeft && panelLeft.classList.contains('open')) {
+                panelLeft.classList.remove('open');
+                mainContainer.classList.remove('menu-open');
+            }
+        });
+
+        // Opcional: cerrar menú al hacer click fuera del panel
+        document.addEventListener('click', function(e) {
+            if (
+                window.innerWidth <= 768 &&
+                panelLeft.classList.contains('open') &&
+                !panelLeft.contains(e.target) &&
+                e.target !== hamburger
+            ) {
+                panelLeft.classList.remove('open');
+                mainContainer.classList.remove('menu-open');
+            }
+        });
+    </script>
+</body>
+
+</html>

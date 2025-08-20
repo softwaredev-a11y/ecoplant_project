@@ -1,0 +1,221 @@
+@import url('https://fonts.googleapis.com/css2?family=Nata+Sans:wght@100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+html,
+body {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    width: 100%;
+    font-family: 'Open Sans', sans-serif;
+    background-color: #F7F7F7;
+    overflow-x: hidden;
+}
+
+.main-container {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    min-height: 100vh;
+    padding: 0.5rem;
+    background-color: #F7F7F7;
+    box-sizing: border-box;
+    transition: filter 0.3s;
+}
+
+.panel-left {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #ccc;
+    border-radius: 1rem;
+    background: #fff;
+    width: 28%;
+    max-width: 300px;
+    min-width: 220px;
+    padding: 1.5rem 1rem;
+    box-shadow: 0 2px 16px 0 rgba(0, 0, 0, 0.04);
+    gap: 2rem;
+    z-index: 100;
+    transition: left 0.3s;
+}
+
+.panel-right {
+    width: 72%;
+    background: #fff;
+    border: 1px solid #ccc;
+    border-radius: 1rem;
+    padding: 2rem;
+    margin-left: 1rem;
+    box-shadow: 0 2px 16px 0 rgba(0, 0, 0, 0.04);
+    min-height: 80vh;
+    overflow-x: auto;
+}
+
+.logo img {
+    width: 120px;
+    height: auto;
+    display: block;
+    margin: 0 auto 1.5rem auto;
+}
+
+.input-container {
+    margin-bottom: 1rem;
+}
+
+#search-input {
+    width: 100%;
+    padding: 0.6rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+.menu-container {
+    margin-bottom: 2rem;
+}
+
+.menu-container>span {
+    font-weight: 700;
+    color: #55b004;
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.menu-items {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.footer-container {
+    display: flex;
+    flex-direction: column;
+    gap: 0.7rem;
+    margin-top: auto;
+}
+
+.history-button,
+.logout-button {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-weight: 600;
+    cursor: pointer;
+    padding: 0.7rem;
+    background: #f5f5f5;
+    transition: background 0.2s;
+}
+
+.history-button:hover,
+.logout-button:hover {
+    background: #e6e6e6;
+}
+
+.hamburger {
+    display: none;
+    position: fixed;
+    top: 1.2rem;
+    left: 1.2rem;
+    z-index: 200;
+    width: 40px;
+    height: 40px;
+    background: #fff;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.07);
+}
+
+.hamburger span,
+.hamburger span:before,
+.hamburger span:after {
+    display: block;
+    background: #55b004;
+    height: 4px;
+    width: 24px;
+    border-radius: 2px;
+    position: absolute;
+    content: '';
+    transition: all 0.3s;
+}
+
+.hamburger span {
+    position: relative;
+}
+
+.hamburger span:before {
+    top: -8px;
+    left: 0;
+}
+
+.hamburger span:after {
+    top: 8px;
+    left: 0;
+}
+
+
+/* Responsive styles */
+
+@media (max-width: 1024px) {
+    .panel-left {
+        width: 34%;
+        max-width: 260px;
+    }
+    .panel-right {
+        width: 66%;
+        padding: 1.2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .main-container {
+        flex-direction: column;
+        padding: 0;
+    }
+    .panel-right {
+        width: 100%;
+        margin-left: 0;
+        margin-top: 1rem;
+        padding: 1rem;
+        min-height: 60vh;
+    }
+    .panel-left {
+        position: fixed;
+        left: -320px;
+        top: 0;
+        height: 100vh;
+        width: 80vw;
+        max-width: 320px;
+        min-width: 180px;
+        box-shadow: 2px 0 16px 0 rgba(0, 0, 0, 0.10);
+        background: #fff;
+        transition: left 0.3s;
+        z-index: 1000;
+        margin: 0;
+        padding: 2rem 1rem 1rem 1rem;
+    }
+    .panel-left.open {
+        left: 0;
+    }
+    .hamburger {
+        display: flex;
+    }
+    .main-container.menu-open {
+        filter: blur(2px) grayscale(0.2);
+        pointer-events: none;
+        user-select: none;
+    }
+}
+
+@media (max-width: 480px) {
+    .panel-left {
+        width: 95vw;
+        max-width: 95vw;
+        padding: 1.2rem 0.5rem;
+    }
+    .panel-right {
+        padding: 0.7rem;
+    }
+    .logo img {
+        width: 90px;
+    }
+}
