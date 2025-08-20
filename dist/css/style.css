@@ -110,6 +110,13 @@ input {
     background-color: #418204;
 }
 
+.text-error {
+    display: none;
+    color: red;
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
 
 /* Tablets */
 
