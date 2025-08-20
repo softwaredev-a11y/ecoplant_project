@@ -32,6 +32,9 @@ document.getElementById('search-input').addEventListener('input', function(event
 
 });
 
+document.getElementById('logout-button').addEventListener('click', function() {
+    logout();
+});
 
 
 //Función para verificar si el usuario está autenticado
@@ -78,8 +81,21 @@ async function getPlants(tokenSession) {
 
 //Función para cerrar sesión
 async function logout() {
-    sessionStorage.removeItem('token');
-    window.location.href = 'login.html';
+    fetch(`${baseUrl}logout`, {
+            method: 'GET',
+            headers: {
+                Authenticate: sessionStorage.getItem('token'),
+            },
+        }).then(response => response.json())
+        .then(data => {
+            if (data.message.includes('Session terminated')) {
+                sessionStorage.removeItem('token');
+                window.location.href = 'login.html';
+            }
+        })
+        .catch(error => {
+            console.error('Error al cerrar sesión:', error);
+        });
 }
 
 //Función para renderizar los botones del menú de items
