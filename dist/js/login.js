@@ -26,7 +26,7 @@ document.getElementById('login-form').addEventListener('submit', async function(
                 .then(res => {
                     if (res.message.includes("successfully")) {
                         sessionStorage.setItem('token', res.auth);
-                        //Window.location.href = 'dashboard.html';
+                        window.location.href = 'dashboard.html';
                     } else {
                         document.getElementById('text-error').style.display = 'block';
                     }
