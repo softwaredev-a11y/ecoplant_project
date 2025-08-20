@@ -17,6 +17,21 @@ document.addEventListener('DOMContentLoaded', async function() {
 
 });
 
+document.getElementById('search-input').addEventListener('input', function(event) {
+    const query = this.value.toLowerCase().trim();
+    const menuItems = document.querySelectorAll(".menu-item");
+
+    menuItems.forEach(button => {
+        const text = button.textContent.toLowerCase();
+        if (text.includes(query)) {
+            button.style.display = "block"; // mostrar
+        } else {
+            button.style.display = "none"; // ocultar
+        }
+    });
+
+});
+
 
 
 //Función para verificar si el usuario está autenticado
