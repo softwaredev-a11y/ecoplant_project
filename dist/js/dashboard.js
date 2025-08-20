@@ -112,30 +112,25 @@ function renderMenuButtons(plants) {
     });
 }
 
-document.getElementById('hamburger').addEventListener('click', function() {
-    const hamburger = document.getElementById("hamburger");
-    const panelLeft = document.getElementById("panel-left");
+const hamburger = document.getElementById("hamburger");
+const panelLeft = document.getElementById("panel-left");
 
-    function closePanel() {
-        panelLeft.classList.remove("open");
-        hamburger.classList.remove("active");
-        document.body.style.overflow = "";
+function closePanel() {
+    panelLeft.classList.remove("open");
+    hamburger.classList.remove("active");
+    document.body.style.overflow = "";
+}
+
+// Abrir / cerrar menú con el mismo botón
+hamburger.addEventListener("click", () => {
+    panelLeft.classList.toggle("open");
+    hamburger.classList.toggle("active");
+    document.body.style.overflow = panelLeft.classList.contains("open") ? "hidden" : "";
+});
+
+// Reset al volver a escritorio
+window.addEventListener("resize", () => {
+    if (window.innerWidth > 768) {
+        closePanel();
     }
-
-    // Abrir / cerrar menú con el mismo botón
-    hamburger.addEventListener("click", () => {
-        panelLeft.classList.toggle("open");
-        hamburger.classList.toggle("active");
-
-        document.body.style.overflow = panelLeft.classList.contains("open") ? "hidden" : "";
-    });
-
-    // Cerrar menú al hacer clic en el overlay
-
-    // Reset al volver a escritorio
-    window.addEventListener("resize", () => {
-        if (window.innerWidth > 768) {
-            closePanel();
-        }
-    });
 });

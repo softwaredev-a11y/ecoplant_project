@@ -184,6 +184,9 @@ body {
         pointer-events: none;
         user-select: none;
     }
+    .footer-container {
+        margin-top: 0;
+    }
 }
 
 @media (max-width: 480px) {
@@ -197,6 +200,9 @@ body {
     }
     .logo img {
         width: 90px;
+    }
+    .footer-container {
+        margin-top: 0;
     }
 }
 
@@ -223,25 +229,6 @@ body {
 .available-ecoplants {
     font-weight: 600;
     color: #525252;
-}
-
-.overlay {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    background: rgba(0, 0, 0, 0.4);
-    z-index: 900;
-    /* 🔹 Debajo del panel izquierdo */
-}
-
-
-/* Cuando el menú está abierto */
-
-.overlay.active {
-    display: block;
 }
 
 
