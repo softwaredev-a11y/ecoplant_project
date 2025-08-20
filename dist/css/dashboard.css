@@ -50,6 +50,9 @@ body {
     box-shadow: 0 2px 16px 0 rgba(0, 0, 0, 0.04);
     min-height: 80vh;
     overflow-x: auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1rem;
 }
 
 .logo img {
@@ -153,12 +156,13 @@ body {
     .main-container {
         flex-direction: column;
         padding: 0;
+        align-items: center;
     }
     .panel-right {
-        width: 100%;
+        width: 90%;
         margin: 0;
         padding: 1rem;
-        min-height: 100vh;
+        min-height: 80vh;
         /* antes 60vh */
     }
     .panel-left {
@@ -263,4 +267,10 @@ body {
 .hamburger.active span:after {
     transform: rotate(-45deg);
     top: 0;
+}
+
+.panel {
+    border: 1px solid #ccc;
+    border-radius: 0.3rem;
+    max-height: 300px;
 }
