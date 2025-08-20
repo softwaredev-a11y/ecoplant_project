@@ -29,7 +29,7 @@ body {
     border: 1px solid #ccc;
     border-radius: 1rem;
     background: #fff;
-    width: 28%;
+    width: 25%;
     max-width: 300px;
     min-width: 220px;
     padding: 1.5rem 1rem;
@@ -41,7 +41,7 @@ body {
 }
 
 .panel-right {
-    width: 72%;
+    width: 75%;
     background: #fff;
     border: 1px solid #ccc;
     border-radius: 1rem;
@@ -156,28 +156,25 @@ body {
     }
     .panel-right {
         width: 100%;
-        margin-left: 0;
-        margin-top: 1rem;
+        margin: 0;
         padding: 1rem;
-        min-height: 60vh;
+        min-height: 100vh;
+        /* antes 60vh */
     }
     .panel-left {
         position: fixed;
-        left: -320px;
         top: 0;
+        left: 0;
         height: 100vh;
         width: 80vw;
         max-width: 320px;
         min-width: 180px;
-        box-shadow: 2px 0 16px 0 rgba(0, 0, 0, 0.10);
-        background: #fff;
-        transition: left 0.3s;
-        z-index: 1000;
-        margin: 0;
-        padding: 2rem 1rem 1rem 1rem;
+        transform: translateX(-100%);
+        /* 🔹 oculto fuera de la pantalla */
+        transition: transform 0.3s ease;
     }
     .panel-left.open {
-        left: 0;
+        transform: translateX(0);
     }
     .hamburger {
         display: flex;
@@ -226,4 +223,57 @@ body {
 .available-ecoplants {
     font-weight: 600;
     color: #525252;
+}
+
+.overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.4);
+    z-index: 900;
+    /* 🔹 Debajo del panel izquierdo */
+}
+
+
+/* Cuando el menú está abierto */
+
+.overlay.active {
+    display: block;
+}
+
+
+/* Estado activo del botón hamburguesa */
+
+.hamburger.active span {
+    background: transparent;
+}
+
+.hamburger.active span:before {
+    transform: rotate(45deg);
+    top: 0;
+}
+
+.hamburger.active span:after {
+    transform: rotate(-45deg);
+    top: 0;
+}
+
+
+/* Estado activo del botón hamburguesa */
+
+.hamburger.active span {
+    background: transparent;
+}
+
+.hamburger.active span:before {
+    transform: rotate(45deg);
+    top: 0;
+}
+
+.hamburger.active span:after {
+    transform: rotate(-45deg);
+    top: 0;
 }
