@@ -35,38 +35,7 @@
             <h1>Contenido</h1>
         </div>
     </div>
-    <script>
-        // Responsive menu JS
-        const hamburger = document.getElementById('hamburger');
-        const panelLeft = document.getElementById('panel-left');
-        const mainContainer = document.getElementById('main-container');
-
-        hamburger.addEventListener('click', function() {
-            panelLeft.classList.toggle('open');
-            mainContainer.classList.toggle('menu-open');
-        });
-
-        // Cierra el menú al hacer click fuera en móviles
-        panelLeft.addEventListener('click', function(e) {
-            if (e.target === panelLeft && panelLeft.classList.contains('open')) {
-                panelLeft.classList.remove('open');
-                mainContainer.classList.remove('menu-open');
-            }
-        });
-
-        // Opcional: cerrar menú al hacer click fuera del panel
-        document.addEventListener('click', function(e) {
-            if (
-                window.innerWidth <= 768 &&
-                panelLeft.classList.contains('open') &&
-                !panelLeft.contains(e.target) &&
-                e.target !== hamburger
-            ) {
-                panelLeft.classList.remove('open');
-                mainContainer.classList.remove('menu-open');
-            }
-        });
-    </script>
+    <script src="/dist/js/dashboard.js"></script>
 </body>
 
 </html>
