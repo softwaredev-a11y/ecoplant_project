@@ -13,10 +13,11 @@
         <div class="header">
             <div class="options-container">
                 <img class="logo-img" src="/dist/img/logo.png" alt="">
-                <button class="history-button">Historial de sesiones</button>
-                <button class="summary-button">Ecoplantas resumen</button>
+
             </div>
             <div class="logout-container">
+                <button class="history-button">Historial de accesos</button>
+                <button class="summary-button">Diagnóstico</button>
                 <button id="logout-button" class="logout-button">Cerrar sesión</button>
             </div>
         </div>
@@ -24,40 +25,120 @@
         <div class="menu-container">
             <div class="panel-left">
                 <div class="input-container">
-                    <input type="search" name="" id="search-input" placeholder="Buscar Ecoplantas" class="search-input">
+                    <input type="search" name="" id="search-input" placeholder="Buscar Ecoplanta" class="search-input">
                 </div>
                 <div class="menu-items">
                 </div>
             </div>
             <div class="panel-right">
+                <!-- Esto debería de convertirse en una plantilla. -->
                 <div class="info-container">
-                    <h3 class="ecoplant-name">Nombre de la ecoplanta escogida</h3>
+                    <h3 class="ecoplant-name">
+                        [Nombre de la planta]
+                    </h3>
                     <div class="info-containers">
                         <div class="description-container">
                             <div class="header-info-containers">
-                                <span class="title-container">Descripción de la planta</span>
+                                <span class="title-container">Descripción</span>
                             </div>
-                            <span>Descripción</span>
-                            <span>Versión del script</span>
-                            <span>Estado conectividad del celular</span>
-                            <span>Estado del accesorio expansor</span>
-                            <span>Estado del GPS</span>
-                            <span>Proceso en ejecución actualmente</span>
-                            <span>Flujo actual</span>
+                            <div class="">
+                                <img src="/dist/img/image-not-available.jpg" alt="">
+                            </div>
+                            <div class="items-panel">
+                                <span class="item-panel">Descripción: <span></span> </span>
+                                <span class="item-panel">Versión del script: <span></span> </span>
+                                <br>
+                                <span class="item-panel">Estado conectividad del celular: <span></span> </span>
+                                <span class="item-panel">Estado del accesorio expansor: <span></span> </span>
+                                <span class="item-panel">Estado del GPS:<span></span> </span>
+                                <br>
+                                <span class="item-panel">Proceso en ejecución actualmente:<span></span> </span>
+                                <span class="item-panel"> Flujo actual:<span></span> </span>
+                            </div>
                         </div>
 
                         <div class="operations-container">
                             <div class="header-info-containers">
                                 <span class="title-container">Párametros de operación</span>
                             </div>
-                            <p id="description-text" class="description-text">Selecciona una Ecoplantas para ver su descripción.</p>
+                            <div class="items-panel">
+                                <span class="item-panel">Filtración:<span></span></span>
+                                <div class="item-operation">
+                                    <input type="number" name="" id="">
+                                    <select name="" id="">
+                                           <option value=""></option>
+                                        <option value="">Segundos</option>
+                                        <option value="">Minutos</option>
+                                        <option value="">Horas</option>
+                                    </select>
+                                    <button class="change-button">Cambiar filtración</button>
+                                </div>
+                                <span class="item-panel">Retrolavado:<span></span></span>
+                                <div class="item-operation">
+                                    <input type="number" name="" id="">
+                                    <select name="" id="">
+                                              <option value=""></option>
+                                        <option value="">Segundos</option>
+                                        <option value="">Minutos</option>
+                                        <option value="">Horas</option>
+                                    </select>
+                                    <button class="change-button">Cambiar retrolavado</button>
+                                </div>
+                                <span class="item-panel">Enjuague:<span></span></span>
+                                <div class="item-operation">
+                                    <input type="number" name="" id="">
+                                    <select name="" id="">
+                                              <option value=""></option>
+                                        <option value="">Segundos</option>
+                                        <option value="">Minutos</option>
+                                        <option value="">Horas</option>
+                                    </select>
+                                    <button class="change-button">Cambiar enjuague</button>
+                                </div>
+                                <br>
+                                <span class="item-panel">Alerta de flujo disminuyendo:<span></span></span>
+                                <div class="item-operation">
+                                    <input type="number" name="" id="">
+                                    <select name="" id="">
+                                              <option value=""></option>
+                                        <option value="">Segundos</option>
+                                        <option value="">Minutos</option>
+                                        <option value="">Horas</option>
+                                    </select>
+                                    <button class="change-button">Cambiar umbral GPM</button>
+                                </div>
+                                <span class="item-panel">Alarmado por flujo insuficiente:<span></span></span>
+                                <div class="item-operation">
+                                    <input type="number" name="" id="">
+                                    <select name="" id="">
+                                              <option value=""></option>
+                                        <option value="">Segundos</option>
+                                        <option value="">Minutos</option>
+                                        <option value="">Horas</option>
+                                    </select>
+                                    <button class="change-button">Cambiar umbral GPM</button>
+                                </div>
+                            </div>
                         </div>
                         <div class="months-container">
                             <div class="header-info-containers">
-                                <span class="title-container">Acumulados del mes actual y del mes anterior</span>
+                                <span class="title-container">Acumulados del mes actual y mes anterior</span>
                             </div>
-                            <p id="description-text" class="description-text">Selecciona una Ecoplantas para ver su descripción.</p>
+                            <div class="items-panel">
+
+                                <span class="item-panel">Acumulado Filtración mes anterior: <span></span> </span>
+                                <span class="item-panel">Acumulado Filtración mes actual: <span></span> </span>
+                                <br>
+                                <span class="item-panel">Acumulado Enjuague mes anterior: <span></span> </span>
+                                <span class="item-panel">Acumulado Enjuague mes actual: <span></span> </span>
+                                <br>
+                                <span class="item-panel">Acumulado Retrolavado mes anterior: <span></span> </span>
+                                <span class="item-panel">Acumulado Retrolavado mes actual: <span></span> </span>
+                                <br>
+                                <span class="item-panel">Acumulado Purgado mes actual: <span></span> </span>
+                            </div>
                         </div>
+
                     </div>
                 </div>
             </div>
