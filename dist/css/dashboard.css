@@ -41,7 +41,6 @@ body {
     height: 100%;
     border-top: 1px solid #ccc;
     gap: 20px;
-    /* Asegura que ocupe todo el espacio disponible */
 }
 
 .panel-left {
@@ -79,7 +78,6 @@ body {
     gap: 5px;
     overflow: auto;
     min-height: 0;
-    /* Hace scroll si hay muchos elementos */
 }
 
 .panel-right {
@@ -90,12 +88,10 @@ body {
     height: 100%;
     min-height: 0;
     border-left: 1px solid #ccc;
-    /* Otros estilos que desees */
 }
 
 .main-container {
     height: 90vh;
-    /* O 100vh si prefieres ocupar toda la pantalla */
 }
 
 .menu-container {
@@ -126,12 +122,10 @@ body {
     display: flex;
     align-items: center;
     gap: 12px;
-    /* Espacio entre logo y botones */
 }
 
 .logo-img {
     width: 100px;
-    /* Más pequeño */
     height: auto;
     margin-right: 10px;
     display: block;
