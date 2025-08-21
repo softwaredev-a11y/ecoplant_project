@@ -99,10 +99,12 @@ async function logout() {
 //Función para renderizar los botones del menú de items
 function renderMenuButtons(plants) {
     const menuContainer = document.querySelector('.menu-items');
+    let ecoplantType = '';
     plants.forEach(plants => {
         const button = document.createElement('button');
+        ecoplantType = plants.info.description == null ? 'Sin información disponible' : getTypeNumber(plants.info.description);
         button.className = 'menu-item';
-        button.textContent = plants.name;
+        button.innerHTML = `${plants.name} <br> Tipo: ${ecoplantType }`;
         button.onclick = () => {
             // Pone lógica del botón aquí
             //cargar información de la planta
@@ -134,3 +136,12 @@ window.addEventListener("resize", () => {
         closePanel();
     }
 });
+
+//Función para extraer el tipo de planta
+function getTypeNumber(text) {
+    const match = text.match(/\*type:Ecoplant\s*(\d+)/i);
+    if (match) {
+        return parseInt(match[1], 10);
+    }
+    return null;
+}
