@@ -149,3 +149,37 @@ body {
     border: 1px solid #ccc;
     border-radius: 0.3rem;
 }
+
+.info-container {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+}
+
+.description-container,
+.operations-container,
+.months-container {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 1rem;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.header-info-containers {
+    width: 100%;
+    background-color: #005596;
+    min-height: 30px;
+}
+
+.title-container {
+    color: #fff;
+    font-weight: 600;
+}
+
+.ecoplant-name {
+    color: #525252;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
