@@ -9,37 +9,28 @@
 </head>
 
 <body>
-    <button class="hamburger" id="hamburger" aria-label="Abrir menú">
-        <span></span>
-    </button>
     <div class="main-container" id="main-container">
-        <div class="panel-left" id="panel-left">
-            <div class="logo">
-                <img src="dist/img/logo.png" alt="Logo de Ecoplant" />
+        <div class="header">
+            <div class="options-container">
+                <img class="logo-img" src="/dist/img/logo.png" alt="">
+                <button class="history-button">Historial de sesiones</button>
+                <button class="summary-button">Ecoplantas resumen</button>
             </div>
-            <div class="input-container">
-                <input type="search" id="search-input" placeholder="Buscar..." />
-            </div>
-            <span class="available-ecoplants">Ecoplantas</span>
-            <div class="menu-container">
-                <div class="menu-items">
-                    <!-- Aquí van los items del menú -->
-                </div>
-            </div>
-            <div class="footer-container">
-                <button class="history-button" id="history-button">Historial de inicios de sesión</button>
-                <button class="logout-button" id="logout-button">Salir</button>
+            <div class="logout-container">
+                <button id="logout-button" class="logout-button">Cerrar sesión</button>
             </div>
         </div>
-        <div class="panel-right">
-            <div class="panel">
-                <span>panel1</span>
+        <!-- Aquí se renderizarán los botones del menú -->
+        <div class="menu-container">
+            <div class="panel-left">
+                <div class="input-container">
+                    <input type="search" name="" id="search-input" placeholder="Buscar Ecoplantas" class="search-input">
+                </div>
+                <div class="menu-items">
+                </div>
             </div>
-            <div class="panel">
-                <span>panel 2</span>
-            </div>
-            <div class="panel">
-                <span>panel 3</span>
+            <div class="panel-right">
+                <h1>Contenido del panel pricipal</h1>
             </div>
         </div>
     </div>

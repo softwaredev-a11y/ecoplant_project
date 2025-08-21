@@ -6,271 +6,153 @@ body {
     min-height: 100vh;
     width: 100%;
     font-family: 'Open Sans', sans-serif;
-    background-color: #F7F7F7;
+    background-color: white;
     overflow: hidden;
     display: flex;
     align-items: center;
+    justify-content: center;
 }
 
 .main-container {
     display: flex;
-    justify-content: space-evenly;
-    width: 100%;
-    min-height: 90vh;
-    padding: 0.5rem;
-    background-color: #F7F7F7;
-    box-sizing: border-box;
-    transition: filter 0.3s;
-}
-
-.panel-left {
-    display: flex;
     flex-direction: column;
+    width: 98%;
+    min-height: 90vh;
+    box-sizing: border-box;
     border: 1px solid #ccc;
-    border-radius: 1rem;
-    background: #fff;
-    width: 25%;
-    max-width: 300px;
-    min-width: 220px;
-    padding: 1.5rem 1rem;
-    box-shadow: 0 2px 16px 0 rgba(0, 0, 0, 0.04);
-    gap: 1rem;
-    z-index: 100;
-    transition: left 0.3s;
-    min-height: 80vh;
+    border-radius: 3px;
 }
 
-.panel-right {
-    width: 75%;
-    background: #fff;
-    border: 1px solid #ccc;
-    border-radius: 1rem;
-    padding: 2rem;
-    margin-left: 0.5rem;
-    box-shadow: 0 2px 16px 0 rgba(0, 0, 0, 0.04);
-    min-height: 80vh;
-    overflow-x: auto;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 1rem;
-}
-
-.logo img {
-    width: 120px;
-    height: auto;
-    display: block;
-    margin: 0 auto 1.5rem auto;
-}
-
-.input-container {
-    margin-bottom: 1rem;
-}
-
-#search-input {
-    width: 100%;
-    padding: 0.6rem;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    font-size: 1rem;
+.header {
+    display: flex;
+    justify-content: space-between;
+    background-color: white;
+    min-height: 60px;
+    max-height: 60px;
+    width: 99%;
+    align-items: center;
+    padding: 0.5rem;
 }
 
 .menu-container {
-    margin-bottom: 2rem;
-    max-height: 55vh;
-    min-height: 55vh;
-    overflow-y: auto;
+    display: flex;
+    flex: 1 1 auto;
+    min-height: 0;
+    height: 100%;
+    border-top: 1px solid #ccc;
+    gap: 20px;
+    /* Asegura que ocupe todo el espacio disponible */
+}
+
+.panel-left {
+    background-color: white;
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    min-height: 0;
+}
+
+.input-container {
+    padding: 0.5rem;
+}
+
+.search-input {
+    width: 96%;
+    height: 40px;
+    border: 0px;
+    padding: 0.2rem;
+    border-bottom: 1px solid #ccc;
+    margin-bottom: 0.3rem;
+}
+
+.search-input:focus {
+    outline: none;
+    border-bottom: 1px solid #ccc;
 }
 
 .menu-items {
+    flex: 1 1 auto;
     display: flex;
     flex-direction: column;
-    gap: 0.5rem;
+    padding: 0.5rem;
+    gap: 5px;
+    overflow: auto;
+    min-height: 0;
+    /* Hace scroll si hay muchos elementos */
 }
 
-.footer-container {
-    display: flex;
-    flex-direction: column;
-    gap: 0.7rem;
-    margin-top: auto;
-}
-
-.hamburger {
-    display: none;
-    position: fixed;
-    top: 1.2rem;
-    left: 1.2rem;
-    z-index: 200;
-    width: 40px;
-    height: 40px;
+.panel-right {
+    flex: 1 1 auto;
     background: #fff;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
-    box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.07);
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    min-height: 0;
+    border-left: 1px solid #ccc;
+    /* Otros estilos que desees */
 }
 
-.hamburger span,
-.hamburger span:before,
-.hamburger span:after {
-    display: block;
-    background: #55b004;
-    height: 4px;
-    width: 24px;
-    border-radius: 2px;
-    position: absolute;
-    content: '';
-    transition: all 0.3s;
+.main-container {
+    height: 90vh;
+    /* O 100vh si prefieres ocupar toda la pantalla */
 }
 
-.hamburger span {
-    position: relative;
+.menu-container {
+    flex: 1 1 auto;
+    min-height: 0;
+    height: 100%;
 }
 
-.hamburger span:before {
-    top: -8px;
-    left: 0;
-}
-
-.hamburger span:after {
-    top: 8px;
-    left: 0;
-}
-
-
-/* Responsive styles */
-
-@media (max-width: 1024px) {
-    .panel-left {
-        width: 34%;
-        max-width: 260px;
-    }
-    .panel-right {
-        width: 66%;
-        padding: 1.2rem;
-    }
-}
-
-@media (max-width: 768px) {
-    .main-container {
-        flex-direction: column;
-        padding: 0;
-        align-items: center;
-    }
-    .panel-right {
-        width: 90%;
-        margin: 0;
-        padding: 1rem;
-        min-height: 80vh;
-        /* antes 60vh */
-    }
-    .panel-left {
-        position: fixed;
-        top: 0;
-        left: 0;
-        height: 100vh;
-        width: 80vw;
-        max-width: 320px;
-        min-width: 180px;
-        transform: translateX(-100%);
-        /* 🔹 oculto fuera de la pantalla */
-        transition: transform 0.3s ease;
-    }
-    .panel-left.open {
-        transform: translateX(0);
-    }
-    .hamburger {
-        display: flex;
-    }
-    .main-container.menu-open {
-        filter: blur(2px) grayscale(0.2);
-        pointer-events: none;
-        user-select: none;
-    }
-    .footer-container {
-        margin-top: 0;
-    }
-}
-
-@media (max-width: 480px) {
-    .panel-left {
-        width: 95vw;
-        max-width: 95vw;
-        padding: 1.2rem 0.5rem;
-    }
-    .panel-right {
-        padding: 0.7rem;
-    }
-    .logo img {
-        width: 90px;
-    }
-    .footer-container {
-        margin-top: 0;
-    }
-}
-
-.menu-item,
-.history-button,
-.logout-button {
-    background-color: #fff;
+.menu-item {
+    word-break: break-all;
     text-align: start;
-    height: 25px;
     cursor: pointer;
-    border: 0px solid #ccc;
+    background-color: white;
+    padding: 0.4rem;
+    border: 0px;
+    border-bottom: 1px solid #ccc;
+    margin-bottom: 0.3rem;
     color: #525252;
 }
 
-.menu-item:hover,
-.history-button:hover,
-.logout-button:hover {
-    background-color: #e6e6e6;
+.menu-item:hover {
     border: 1px solid #ccc;
-    border-radius: 0.2rem;
-    font-weight: 600;
+    background-color: #ccc;
+    border-radius: 3px;
 }
 
-.available-ecoplants {
-    font-weight: 600;
+.options-container {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    /* Espacio entre logo y botones */
+}
+
+.logo-img {
+    width: 100px;
+    /* Más pequeño */
+    height: auto;
+    margin-right: 10px;
+    display: block;
+}
+
+.history-button,
+.summary-button,
+.logout-button {
+    padding: 0.5rem 1rem;
+    border: 0px solid #ccc;
+    background: white;
+    border-radius: 4px;
+    font-size: 1rem;
+    cursor: pointer;
+    font-weight: bold;
     color: #525252;
 }
 
-
-/* Estado activo del botón hamburguesa */
-
-.hamburger.active span {
-    background: transparent;
-}
-
-.hamburger.active span:before {
-    transform: rotate(45deg);
-    top: 0;
-}
-
-.hamburger.active span:after {
-    transform: rotate(-45deg);
-    top: 0;
-}
-
-
-/* Estado activo del botón hamburguesa */
-
-.hamburger.active span {
-    background: transparent;
-}
-
-.hamburger.active span:before {
-    transform: rotate(45deg);
-    top: 0;
-}
-
-.hamburger.active span:after {
-    transform: rotate(-45deg);
-    top: 0;
-}
-
-.panel {
+.history-button:hover,
+.summary-button:hover,
+.logout-button:hover {
     border: 1px solid #ccc;
     border-radius: 0.3rem;
-    max-height: 300px;
 }
