@@ -104,7 +104,7 @@ function renderMenuButtons(plants) {
         const button = document.createElement('button');
         ecoplantType = plants.info.description == null ? 'Sin información disponible' : getTypeNumber(plants.info.description);
         button.className = 'menu-item';
-        button.innerHTML = `${plants.name} <br> Tipo: ${ecoplantType }`;
+        button.innerHTML = `<strong>${plants.name}</strong> <br> Tipo: ${ecoplantType}`;
         button.onclick = () => {
             // Pone lógica del botón aquí
             //cargar información de la planta
@@ -113,29 +113,6 @@ function renderMenuButtons(plants) {
         menuContainer.appendChild(button);
     });
 }
-
-const hamburger = document.getElementById("hamburger");
-const panelLeft = document.getElementById("panel-left");
-
-function closePanel() {
-    panelLeft.classList.remove("open");
-    hamburger.classList.remove("active");
-    document.body.style.overflow = "";
-}
-
-// Abrir / cerrar menú con el mismo botón
-hamburger.addEventListener("click", () => {
-    panelLeft.classList.toggle("open");
-    hamburger.classList.toggle("active");
-    document.body.style.overflow = panelLeft.classList.contains("open") ? "hidden" : "";
-});
-
-// Reset al volver a escritorio
-window.addEventListener("resize", () => {
-    if (window.innerWidth > 768) {
-        closePanel();
-    }
-});
 
 //Función para extraer el tipo de planta
 function getTypeNumber(text) {
