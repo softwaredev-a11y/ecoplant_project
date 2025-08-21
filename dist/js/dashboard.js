@@ -62,6 +62,7 @@ async function getUserInfo(tokenSession) {
 
 //Función para obtener el listado de las plantas
 async function getPlants(tokenSession) {
+    //Poner grupo
     try {
         const response = await fetch(`${baseUrl}vehicles`, {
             method: 'GET',
@@ -104,7 +105,7 @@ function renderMenuButtons(plants) {
         const button = document.createElement('button');
         ecoplantType = plants.info.description == null ? 'Sin información disponible' : getTypeNumber(plants.info.description);
         button.className = 'menu-item';
-        button.innerHTML = `<strong>${plants.name}</strong> <br> Modelo: ${ecoplantType}`;
+        button.innerHTML = `<strong>${plants.name}</strong> <br> Modelo: ${ecoplantType}   <br> Imei: ${plants.device}`;
         button.onclick = () => {
             // Pone lógica del botón aquí
             //cargar información de la planta
