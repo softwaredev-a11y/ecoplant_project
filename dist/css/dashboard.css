@@ -1,4 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Nata+Sans:wght@100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 html,
 body {
     margin: 0;
@@ -11,6 +10,23 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+
+/* Para Chrome, Safari, Edge y Opera */
+
+input[type=number]::-webkit-outer-spin-button,
+input[type=number]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+    /* Opcional: elimina margen extra */
+}
+
+
+/* Para Firefox */
+
+input[type=number] {
+    -moz-appearance: textfield;
 }
 
 .main-container {
