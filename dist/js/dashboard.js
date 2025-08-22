@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', async function() {
     const userInfo = await getUserInfo(tokenSession);
     const plantsInfo = await getPlants(tokenSession);
     renderMenuButtons(plantsInfo.data)
-
+        //Quitar
     console.log('Token de sesión:', tokenSession);
     console.log('Datos del usuario:', userInfo);
     console.log('Información de las plantas:', plantsInfo);
@@ -78,43 +78,44 @@ async function getPlants(tokenSession) {
     }
 }
 
-//Función para cerrar sesión
-async function logout() {
-    fetch(`${baseUrl}logout`, {
-            method: 'GET',
-            headers: {
-                Authenticate: sessionStorage.getItem('token'),
-            },
-        }).then(response => response.json())
-        .then(data => {
-            if (data.message.includes('Session terminated')) {
-                sessionStorage.removeItem('token');
-                window.location.href = 'login.html';
-            }
-        })
-        .catch(error => {
-            console.error('Error al cerrar sesión:', error);
-        });
-}
+
 
 //Función para renderizar los botones del menú de items
 function renderMenuButtons(plants) {
     const menuContainer = document.querySelector('.menu-items');
     let ecoplantType = '';
-    plants.forEach(plants => {
+    plants.forEach(plant => {
         const button = document.createElement('button');
-        ecoplantType = plants.info.description == null ? 'Sin información disponible' : getTypeNumber(plants.info.description);
+        ecoplantType = plant.info.description == null ? 'Sin información disponible' : getTypeNumber(plant.info.description);
         button.className = 'menu-item';
-        button.innerHTML = `<strong>${plants.name}</strong> <br> Modelo: ${ecoplantType}   <br> Imei: ${plants.device}`;
+        button.innerHTML = `<strong>${plant.name}</strong> <br> Modelo: ${ecoplantType}   <br> Imei: ${plant.device}`;
         button.onclick = () => {
             // Pone lógica del botón aquí
             //cargar información de la planta
             const namePlant = document.getElementById('ecoplant-name');
-            namePlant.textContent = plants.name;
+            namePlant.textContent = plant.name;
+            putImage(plant.id);
         };
         menuContainer.appendChild(button);
     });
 }
+
+//Función para renderizar el panel de descripción
+function renderDescriptionPanel(plant) {
+
+
+}
+
+//Función para poner la imagen en el panel de descripción
+function putImage(idPlant) {
+    const img = document.getElementById('image-plant');
+    img.onerror = function() {
+        this.onerror = null; // Previene bucle si la imagen de fallback tampoco existe
+        this.src = '/dist/img/image-not-available.jpg';
+    };
+    img.src = `${baseUrl}images/vehicles/${idPlant}/photo`;
+}
+
 
 //Función para extraer el tipo de planta
 function getTypeNumber(text) {
@@ -144,3 +145,23 @@ window.addEventListener('resize', () => {
         document.body.style.overflow = '';
     }
 });
+
+
+//Función para cerrar sesión
+async function logout() {
+    fetch(`${baseUrl}logout`, {
+            method: 'GET',
+            headers: {
+                Authenticate: sessionStorage.getItem('token'),
+            },
+        }).then(response => response.json())
+        .then(data => {
+            if (data.message.includes('Session terminated')) {
+                sessionStorage.removeItem('token');
+                window.location.href = 'login.html';
+            }
+        })
+        .catch(error => {
+            console.error('Error al cerrar sesión:', error);
+        });
+}
