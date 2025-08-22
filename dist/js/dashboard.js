@@ -109,7 +109,8 @@ function renderMenuButtons(plants) {
         button.onclick = () => {
             // Pone lógica del botón aquí
             //cargar información de la planta
-            console.log(`Botón ${plants.name} clickeado`);
+            const namePlant = document.getElementById('ecoplant-name');
+            namePlant.textContent = plants.name;
         };
         menuContainer.appendChild(button);
     });
@@ -124,6 +125,9 @@ function getTypeNumber(text) {
     return null;
 }
 
+
+
+/////Funciones para el responsive.
 const hamburger = document.getElementById('hamburger');
 const panelLeft = document.getElementById('panel-left');
 

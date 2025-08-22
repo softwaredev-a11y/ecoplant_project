@@ -248,6 +248,7 @@ body {
 .select-time {
     border: 1px solid #ccc;
     border-radius: 0.3rem;
+    font-size: small;
 }
 
 .hamburger {
