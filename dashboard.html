@@ -12,8 +12,10 @@
     <div class="main-container" id="main-container">
         <div class="header">
             <div class="options-container">
+                <button class="hamburger" id="hamburger" aria-label="Abrir menú">
+                <span></span>
+            </button>
                 <img class="logo-img" src="/dist/img/logo.png" alt="">
-
             </div>
             <div class="logout-container">
                 <button class="history-button">Historial de accesos</button>
@@ -23,8 +25,9 @@
         </div>
         <!-- Aquí se renderizarán los botones del menú -->
         <div class="menu-container">
-            <div class="panel-left">
+            <div class="panel-left" id="panel-left">
                 <div class="input-container">
+                    <img src="/dist/icons/search.svg" alt="" class="search-icon">
                     <input type="search" name="" id="search-input" placeholder="Buscar Ecoplanta" class="search-input">
                 </div>
                 <div class="menu-items">
@@ -64,57 +67,57 @@
                             <div class="items-panel">
                                 <span class="item-panel">Filtración:<span></span></span>
                                 <div class="item-operation">
-                                    <input type="number" name="" id="">
-                                    <select name="" id="">
+                                    <input type="number" name="" id="" class="input-time">
+                                    <select name="" id="" class="select-time">
                                            <option value=""></option>
-                                        <option value="">Segundos</option>
-                                        <option value="">Minutos</option>
-                                        <option value="">Horas</option>
+                                        <option value="seconds">Segundos</option>
+                                        <option value="minutes">Minutos</option>
+                                        <option value="hours">Horas</option>
                                     </select>
                                     <button class="change-button">Cambiar filtración</button>
                                 </div>
                                 <span class="item-panel">Retrolavado:<span></span></span>
                                 <div class="item-operation">
-                                    <input type="number" name="" id="">
-                                    <select name="" id="">
+                                    <input type="number" name="" id="" class="input-time">
+                                    <select name="" id="" class="select-time">
                                               <option value=""></option>
-                                        <option value="">Segundos</option>
-                                        <option value="">Minutos</option>
-                                        <option value="">Horas</option>
+                                        <option value="seconds">Segundos</option>
+                                        <option value="minutes">Minutos</option>
+                                        <option value="hours">Horas</option>
                                     </select>
                                     <button class="change-button">Cambiar retrolavado</button>
                                 </div>
                                 <span class="item-panel">Enjuague:<span></span></span>
                                 <div class="item-operation">
-                                    <input type="number" name="" id="">
-                                    <select name="" id="">
+                                    <input type="number" name="" id="" class="input-time">
+                                    <select name="" id="" class="select-time">
                                               <option value=""></option>
-                                        <option value="">Segundos</option>
-                                        <option value="">Minutos</option>
-                                        <option value="">Horas</option>
+                                        <option value="seconds">Segundos</option>
+                                        <option value="minutes">Minutos</option>
+                                        <option value="hours">Horas</option>
                                     </select>
                                     <button class="change-button">Cambiar enjuague</button>
                                 </div>
                                 <br>
                                 <span class="item-panel">Alerta de flujo disminuyendo:<span></span></span>
                                 <div class="item-operation">
-                                    <input type="number" name="" id="">
-                                    <select name="" id="">
+                                    <input type="number" name="" id="" class="input-time">
+                                    <select name="" id="" class="select-time">
                                               <option value=""></option>
-                                        <option value="">Segundos</option>
-                                        <option value="">Minutos</option>
-                                        <option value="">Horas</option>
+                                        <option value="seconds" >Segundos</option>
+                                        <option value="minutes">Minutos</option>
+                                        <option value="hours">Horas</option>
                                     </select>
                                     <button class="change-button">Cambiar umbral GPM</button>
                                 </div>
                                 <span class="item-panel">Alarmado por flujo insuficiente:<span></span></span>
                                 <div class="item-operation">
-                                    <input type="number" name="" id="">
-                                    <select name="" id="">
+                                    <input type="number" name="" id="" class="input-time">
+                                    <select name="" id="" class="select-time">
                                               <option value=""></option>
-                                        <option value="">Segundos</option>
-                                        <option value="">Minutos</option>
-                                        <option value="">Horas</option>
+                                        <option value="seconds">Segundos</option>
+                                        <option value="minutes">Minutos</option>
+                                        <option value="hours">Horas</option>
                                     </select>
                                     <button class="change-button">Cambiar umbral GPM</button>
                                 </div>
