@@ -22,13 +22,6 @@ input[type=number]::-webkit-inner-spin-button {
     /* Opcional: elimina margen extra */
 }
 
-
-/* Para Firefox */
-
-input[type=number] {
-    -moz-appearance: textfield;
-}
-
 .main-container {
     display: flex;
     flex-direction: column;
