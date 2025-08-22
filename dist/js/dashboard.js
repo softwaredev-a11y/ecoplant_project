@@ -9,10 +9,6 @@ document.addEventListener('DOMContentLoaded', async function() {
     const userInfo = await getUserInfo(tokenSession);
     const plantsInfo = await getPlants(tokenSession);
     renderMenuButtons(plantsInfo.data)
-        //Quitar
-    console.log('Token de sesión:', tokenSession);
-    console.log('Datos del usuario:', userInfo);
-    console.log('Información de las plantas:', plantsInfo);
 });
 
 document.getElementById('search-input').addEventListener('input', function(event) {
