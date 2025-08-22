@@ -123,3 +123,20 @@ function getTypeNumber(text) {
     }
     return null;
 }
+
+const hamburger = document.getElementById('hamburger');
+const panelLeft = document.getElementById('panel-left');
+
+hamburger.addEventListener('click', () => {
+    panelLeft.classList.toggle('open');
+    hamburger.classList.toggle('active');
+    document.body.style.overflow = panelLeft.classList.contains('open') ? 'hidden' : '';
+});
+
+window.addEventListener('resize', () => {
+    if (window.innerWidth > 900) {
+        panelLeft.classList.remove('open');
+        hamburger.classList.remove('active');
+        document.body.style.overflow = '';
+    }
+});
